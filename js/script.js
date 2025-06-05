@@ -711,8 +711,7 @@ window.onclick = function(event) {
 function downloadCV() {
     // Sonido especial para descarga
     playSound('magic', 0.3);
-    alert('Funcionalidad de descarga de CV. Aquí se abriría/descargaría el archivo PDF del curriculum.');
-    // window.open('ruta/al/cv.pdf', '_blank');
+    window.open('src/CV.pdf', '_blank');
 }
 
 // Manejo de redimensionamiento de ventana
