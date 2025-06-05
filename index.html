@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maria Camila Ledesma - Portfolio Multimedia</title>
+    <!-- Rutas corregidas para CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- CDN para Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Script para detectar la base URL en GitHub Pages -->
+    <script>
+        // Detectar si estamos en GitHub Pages y ajustar rutas si es necesario
+        (function() {
+            window.isGitHubPages = window.location.hostname.includes('github.io');
+            window.baseUrl = '';
+            if (window.isGitHubPages) {
+                var pathSegments = window.location.pathname.split('/');
+                if (pathSegments.length > 1) {
+                    window.baseUrl = '/' + pathSegments[1];
+                }
+            }
+        })();
+    </script>
 </head>
 <body>
     <div id="canvas-container"></div>
@@ -63,7 +79,8 @@
                 <div class="profile-image" data-aos="fade-right">
                     <div class="avatar-container">
                     <div class="profile-image-bg">
-                    <img src="./src/profile.png" alt=":3" class="profile-photo">
+                    <!-- Corregida la ruta de la imagen de perfil -->
+                    <img src="src/profile.png" alt=":3" class="profile-photo">
                     </div>
                     <div class="orbit-ring"></div>
                     <div class="orbit-ring delay-1"></div>
@@ -113,7 +130,8 @@
                 
                 <div class="project-item featured" data-aos="zoom-in">
                     <div class="project-image">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pollo.jpg-QbEUdVHLG83KKBgDPvrYRWRJXraiGf.jpeg" alt="Modelado 3D - Pollo Estilizado">
+                        <!-- Cambiado a ruta local -->
+                        <img src="src/pollo.jpg" alt="Modelado 3D - Pollo Estilizado">
                         <div class="project-overlay">
                             <div class="project-actions">
                                 <button class="action-btn" onclick="openProjectModal('pollo')">
@@ -138,7 +156,8 @@
 
                 <div class="project-item featured" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blenderaajsdhgkja.jpg-vKU7XRBZfuv2bSuk2lulsnpkABOGAx.jpeg" alt="Modelado Arquitectónico - Habitación">
+                        <!-- Cambiado a ruta local -->
+                        <img src="src/blenderaajsdhgkja.jpg" alt="Modelado Arquitectónico - Habitación">
                         <div class="project-overlay">
                             <div class="project-actions">
                                 <button class="action-btn" onclick="openProjectModal('room')">
@@ -163,8 +182,9 @@
 
                 <div class="project-item" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-video">
-                        <video controls poster="/placeholder.svg?height=200&width=350">
-                            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Comercial%20ATENEA-raFFHFu8RMGfYOPnQejSOZAtgsPrUX.mp4" type="video/mp4">
+                        <!-- Corregido el poster y la ruta del video -->
+                        <video controls>
+                            <source src="src/Comercial ATENEA.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento video.
                         </video>
                     </div>
@@ -181,8 +201,9 @@
 
                 <div class="project-item" data-aos="zoom-in" data-aos-delay="300">
                     <div class="project-video">
-                        <video controls poster="/placeholder.svg?height=200&width=350">
-                            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/miss-qt5LaIFj0JCGOcJ3S78CPwbim0jkeG.mp4" type="video/mp4">
+                        <!-- Corregido el poster y la ruta del video -->
+                        <video controls>
+                            <source src="src/miss.mp4" type="video/mp4">
                             Tu navegador no soporta el elemento video.
                         </video>
                     </div>
@@ -390,7 +411,9 @@
         </div>
     </div>
 
+    <!-- Three.js desde CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Script principal -->
     <script src="js/script.js"></script>
 </body>
 </html>
