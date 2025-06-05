@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Camila Ledesma - Portfolio Multimedia</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div class="floating-particles" id="particles"></div>
+    <div id="scroll-indicator">
+        <div class="scroll-line"></div>
+        <div class="scroll-progress"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">🌌 Maria Camila</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="scrollToSection('home')">Inicio</a></li>
+                <li><a onclick="scrollToSection('profile')">Perfil</a></li>
+                <li><a onclick="scrollToSection('projects')">Proyectos</a></li>
+                <li><a onclick="scrollToSection('skills')">Habilidades</a></li>
+                <li><a onclick="scrollToSection('education')">Educación</a></li>
+                <li><a onclick="scrollToSection('merits')">Méritos</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="MARIA CAMILA LEDESMA">MARIA CAMILA LEDESMA</h1>
+            <p class="typewriter">Estudiante de Ingeniería Multimedia</p>
+            <p class="subtitle">Explorando el universo digital a través del arte y la tecnología</p>
+            <div class="hero-buttons">
+                <a href="#profile" class="cta-button primary">
+                    <i class="fas fa-rocket"></i> Explorar Portfolio
+                </a>
+                <a href="#" class="cta-button secondary" onclick="downloadCV()">
+                    <i class="fas fa-download"></i> Descargar CV
+                </a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll para explorar</p>
+        </div>
+    </section>
+
+    <section id="profile" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Perfil Profesional</h2>
+            <div class="profile-content">
+                <div class="profile-image" data-aos="fade-right">
+                    <div class="avatar-container">
+                    <div class="profile-image-bg">
+                    <img src="./src/profile.png" alt=":3" class="profile-photo">
+                    </div>
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-ring delay-1"></div>
+                    <div class="orbit-ring delay-2"></div>
+                </div>
+                </div>
+                <div class="profile-info" data-aos="fade-left">
+                    <h3>Maria Camila Ledesma Ruiz</h3>
+                    <p class="profile-role">Estudiante de Ingeniería Multimedia • 21 años</p>
+                    <div class="profile-description">
+                        <p>Soy una persona creativa y responsable que se destaca en el trabajo en equipo. 
+                        Actualmente curso sexto semestre de Ingeniería Multimedia en la Universidad San Buenaventura Cali, 
+                        con formación técnica previa en Electricidad y Electrónica.</p>
+                        
+                        <p>Mi objetivo es crecer profesionalmente en el campo multimedia, especializándome en 
+                        modelado 3D, diseño interactivo y producción audiovisual. Combino conocimientos técnicos 
+                        con creatividad para desarrollar proyectos innovadores.</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+57 3122226749</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ledesmacamila04@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Cali, Valle del Cauca</span>
+                        </div>
+                    </div>
+                    
+                    <button class="cv-button" onclick="downloadCV()">
+                        <i class="fas fa-file-pdf"></i> Descargar CV Completo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Proyectos Destacados</h2>
+            <div class="project-gallery">
+                
+                <div class="project-item featured" data-aos="zoom-in">
+                    <div class="project-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pollo.jpg-QbEUdVHLG83KKBgDPvrYRWRJXraiGf.jpeg" alt="Modelado 3D - Pollo Estilizado">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="action-btn" onclick="openProjectModal('pollo')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Modelado 3D - Pollo Estilizado</h3>
+                        <p>Modelo 3D low-poly con estética minimalista, creado en Blender. Enfoque en formas geométricas simples y paleta de colores pastel.</p>
+                        <div class="project-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">3D Modeling</span>
+                            <span class="tag">Low Poly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item featured" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/blenderaajsdhgkja.jpg-vKU7XRBZfuv2bSuk2lulsnpkABOGAx.jpeg" alt="Modelado Arquitectónico - Habitación">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <button class="action-btn" onclick="openProjectModal('room')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Diseño Arquitectónico 3D</h3>
+                        <p>Modelado detallado de una habitación completa con mobiliario, decoración y iluminación realista. Proyecto de visualización arquitectónica.</p>
+                        <div class="project-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">Arquitectura</span>
+                            <span class="tag">Rendering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-video">
+                        <video controls poster="/placeholder.svg?height=200&width=350">
+                            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Comercial%20ATENEA-raFFHFu8RMGfYOPnQejSOZAtgsPrUX.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="project-content">
+                        <h3>Comercial ATENEA</h3>
+                        <p>Producción audiovisual completa incluyendo concepto, grabación, edición y post-producción. Proyecto de comunicación visual.</p>
+                        <div class="project-tags">
+                            <span class="tag">Video</span>
+                            <span class="tag">Edición</span>
+                            <span class="tag">Post-producción</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-video">
+                        <video controls poster="/placeholder.svg?height=200&width=350">
+                            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/miss-qt5LaIFj0JCGOcJ3S78CPwbim0jkeG.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento video.
+                        </video>
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto Audiovisual "Miss"</h3>
+                        <p>Cortometraje experimental que explora narrativas visuales contemporáneas con técnicas avanzadas de edición y color grading.</p>
+                        <div class="project-tags">
+                            <span class="tag">Cortometraje</span>
+                            <span class="tag">Narrativa</span>
+                            <span class="tag">Color Grading</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Habilidades Técnicas</h2>
+            <div class="skills-container">
+                <div class="skills-grid">
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <h3><i class="fas fa-cube"></i> Modelado 3D</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                                <div class="skill-info">
+                                    <h4>Blender</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-shapes"></i></div>
+                                <div class="skill-info">
+                                    <h4>Modelado Low-Poly</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <h3><i class="fas fa-gamepad"></i> Desarrollo Interactivo</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+                                <div class="skill-info">
+                                    <h4>Unity</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fab fa-js-square"></i></div>
+                                <div class="skill-info">
+                                    <h4>Three.js</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                        <h3><i class="fas fa-video"></i> Producción Audiovisual</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-video"></i></div>
+                                <div class="skill-info">
+                                    <h4>Edición de Video</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-volume-up"></i></div>
+                                <div class="skill-info">
+                                    <h4>Diseño de Audio</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="70%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                        <h3><i class="fas fa-bolt"></i> Técnicas</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="skill-info">
+                                    <h4>Electricidad y Electrónica</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon"><i class="fas fa-language"></i></div>
+                                <div class="skill-info">
+                                    <h4>Inglés</h4>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Formación Académica</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Ingeniería Multimedia</h3>
+                        <p class="timeline-date">2019 - Presente (6to Semestre)</p>
+                        <p class="timeline-institution">Universidad San Buenaventura Cali</p>
+                        <p>Formación integral en producción multimedia, computación gráfica, diseño interactivo y tecnologías emergentes.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Curso de Modelado 3D</h3>
+                        <p class="timeline-date">2022</p>
+                        <p class="timeline-institution">Certificación Especializada</p>
+                        <p>Técnicas avanzadas de modelado, texturizado, iluminación y renderizado en Blender.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Técnico en Electricidad y Electrónica</h3>
+                        <p class="timeline-date">2021</p>
+                        <p class="timeline-institution">Colegio Técnico Industrial IETI</p>
+                        <p>Bachiller Académico con formación técnica en sistemas eléctricos y electrónicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="merits" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Logros y Reconocimientos</h2>
+            
+            <div class="merits-grid">
+                <div class="merit-item" data-aos="zoom-in">
+                    <div class="merit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Excelencia Académica</h3>
+                    <p>Reconocimiento por mantener alto rendimiento académico en Ingeniería Multimedia</p>
+                </div>
+
+                <div class="merit-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="merit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Trabajo en Equipo</h3>
+                    <p>Destacada participación en proyectos colaborativos multidisciplinarios</p>
+                </div>
+
+                <div class="merit-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="merit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovación Técnica</h3>
+                    <p>Desarrollo de soluciones creativas combinando arte y tecnología</p>
+                </div>
+
+                <div class="merit-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="merit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Formación Técnica</h3>
+                    <p>Certificación en Electricidad y Electrónica con aplicación en multimedia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para proyectos -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProjectModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
